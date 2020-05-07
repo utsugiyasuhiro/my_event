@@ -12,7 +12,10 @@
       </ul>
     </div>
     <%= simple_format(@event.text) %>
-    <span class="name"><%= @event.name %>
+    <span class="name">
+      <a href="/users/<%= @event.user.id %>">
+        <span>投稿者</span><%= @event.user.nickname %>
+      </a>
     </span>
   </div>
 </div>

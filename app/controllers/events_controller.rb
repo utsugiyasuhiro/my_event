@@ -4,7 +4,7 @@ class EventsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
 
   def index
-    @events = Event.all
+    @events = Event.includes(:user)
   end
 
   def new
@@ -33,7 +33,7 @@ class EventsController < ApplicationController
 
   private
   def event_params
-    params.require(:event).permit(:name, :image, :text).merge(user_id: current_user.id)
+    params.require(:event).permit(:image, :text).merge(user_id: current_user.id)
   end
 
   def set_event

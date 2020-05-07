@@ -4,7 +4,6 @@
   <% @events.each do |event| %>
     <div class="content_post" style="background-image: url(<%= event.image %>);">
       <%= simple_format(event.text) %>
-      <span class="name"><%= event.name %></span>
     </div>
   <% end %>
 </div>

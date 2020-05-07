@@ -17,7 +17,9 @@
       </div>
       <%= simple_format(event.text) %>
       <span class="name">
-        <%= event.name %>
+        <a href="/users/<%= event.user.id %>">
+          <span>投稿者</span><%= event.user.nickname %>
+        </a> 
       </span>
     </div>
   <% end %>
