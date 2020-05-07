@@ -17,6 +17,10 @@ class EventsController < ApplicationController
     event.destroy
   end
 
+  def edit
+    @event = Event.find(params[:id])
+  end
+
   private
   def event_params
     params.require(:event).permit(:name, :image, :text)
