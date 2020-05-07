@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
 
-  before_action :set_event. only: [:show, :edit]
+  before_action :set_event, only: [:show, :edit]
+  before_action :move_to_index, except: [:index, :show]
 
   def index
     @events = Event.all
@@ -37,5 +38,9 @@ class EventsController < ApplicationController
 
   def set_event
     @event = Event.find(params[:id]) 
+  end
+
+  def move_to_index
+    redirect_to action: :index unless user_signed_in?
   end
 end
