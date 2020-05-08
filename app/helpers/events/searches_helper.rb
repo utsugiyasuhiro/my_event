@@ -1,0 +1,2 @@
+module Events::SearchesHelper
+end
