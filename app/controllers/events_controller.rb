@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
 
-  before_action :set_event, only: [:show, :edit]
-  before_action :move_to_index, except: [:index, :show, :search]
+  #before_action :set_event, only: [:show, :edit]
+  #before_action :move_to_index, except: [:index, :show, :search]
 
   def index
     @events = Event.includes(:user).order("created_at DESC").page(params[:page]).per(4)

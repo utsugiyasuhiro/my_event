@@ -2,7 +2,7 @@
   <div class="content_post" style="background-image: url(<%= @event.image %>);">
     <% if user_signed_in? && current_user.id == @event.user_id %> 
       <div class="more">
-        <span><%= image_tag 'arrow_top.png' %></span>
+        <i class="fa fa-edit" aria-hidden="true"></i>
         <ul class="more_list">
           <li>
             <%= link_to '編集', "/events/#{@event.id}/edit", method: :get %>
